@@ -1,11 +1,11 @@
 NAME    		:= libft
 LIB     		:= libft.a
 HEADER  		:= myLib.h ft_system.h ./optLib/optLib.h
-SOURCE  		:= ft_atoi.c ft_memcpy.c ft_memset.c ft_putc.c ft_strcmp.c ft_strlen.c showBits.c strcat.c strsjoin.c ft_is.c ft_hexchartonum.c ft_memcmp.c
-OPT_SOURCE	:= $(wildcard optLib/*.c)
+SOURCE  		:= ft_atoi.c ft_memcpy.c ft_memset.c ft_putc.c ft_strcmp.c ft_strlen.c showBits.c strcat.c strsjoin.c ft_is.c ft_hexchartonum.c ft_memcmp.c ft_realloc.c ft_vector.c
+OPT_SOURCE		:= $(wildcard optLib/*.c)
 OBJ_DIR 		:= .obj_dir
 OBJ     		:= $(addprefix $(OBJ_DIR)/,$(SOURCE:.c=.o))
-OBJ 	 			+= $(addprefix $(OBJ_DIR)/,$(OPT_SOURCE:.c=.o))
+OBJ 	 		+= $(addprefix $(OBJ_DIR)/,$(OPT_SOURCE:.c=.o))
 RM      		:= rm -rf
 CFLAGS  		:=
 DEBFLAGS 		:= -g3

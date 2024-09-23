@@ -1,8 +1,19 @@
 #include <sys/types.h>
 #include <stdio.h>
 #include <string.h>
+#include "myLib.h"
+#include "ft_vector.h"
+
+struct truc{
+    long a;
+    long b;
+};
 
 int main(void)
 {
-  dprintf(2, "%zu\n", strlen("2001:0db8:0000:85a3:0000:0000:ac1f:8001"));
+  struct truc t[] = {{1, 2}, {3, 4}, {5, 6}, {7, 8}};
+  for (int i = 0; i < 4; i++)
+  {
+    dprintf(2, "%p\n", t + i);
+  }
 }
