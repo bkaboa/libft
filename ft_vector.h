@@ -33,6 +33,7 @@ typedef struct vector {
     void    (*print_string)(struct vector*);
     int     (*insert_string)(struct vector*, char *, int);
     int     (*pushBack_string)(struct vector*, char *);
+    int     (*pushBack_n_string)(struct vector*, char *, size_t);
     int     (*pushFront_string)(struct vector*, char *);
 }   vector_t;
 
@@ -58,6 +59,7 @@ void    *vector_findLastNotOf(vector_t *v, void *tofind);
 void    string_print(vector_t *v);
 int     string_insert(vector_t *v, char *str, int at);
 int     string_pushBack(vector_t *v, char *str);
+int     string_n_pushBack(vector_t *v, char *str, size_t n);
 int     string_pushFront(vector_t *v, char *str);
 
 # define VECTOR_INIT(vec) vector_t vec;\

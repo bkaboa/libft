@@ -25,6 +25,7 @@ void    vector_init(vector_t *v)
     v->print_string = string_print;
     v->insert_string = string_insert;
     v->pushBack_string = string_pushBack;
+    v->pushBack_n_string = string_n_pushBack;
     v->pushFront_string = string_pushFront;
 }
 
@@ -269,5 +270,29 @@ int string_pushFront(vector_t *v, char *item)
         v->vectorData.items[i] = (void*)tmp;
     }
     v->vectorData.size += len;
+    return (0);
+}
+
+int pushBack_n_string(vector_t *v, char *item, size_t n)
+{
+    long tmp;
+    if(n == 0)
+        return (-1);
+    if (v->vectorData.size + n >= v->vectorData.capacity)
+    {
+        v->vectorData.capacity = (v->vectorData.size + n) * 2;
+        if (v->vectorData.capacity >= MAX_VECTOR_CAPACITY)
+            return (-1);
+        v->vectorData.items = ft_realloc(v->vectorData.items, sizeof(void *) * v->vectorData.capacity);
+        if (v->vectorData.items == NULL)
+            return (-1);
+    }
+    for (int i = 0; i < n; i++)
+    {
+        tmp = 0;
+        tmp = tmp | item[i];
+        v->vectorData.items[v->vectorData.size + i] = (void*)tmp;
+    }
+    v->vectorData.size += n;
     return (0);
 }

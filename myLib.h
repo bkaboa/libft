@@ -19,7 +19,10 @@
 
 # define UNDEFINE   -1
 # define SUCCESS    1
+# define ERROR      -1
+# define STOP       0
 
+# define READ_SIZE 4096
 
 # define IPV6_LENGTH 39
 # define IPV6 128
@@ -31,6 +34,7 @@ typedef u_int32_t ip4_t;
 typedef u_int128_t ip6_t;
 
 void        *ft_realloc(void *ptr, size_t size);
+
 
 void        showbitsUI( const u_int32_t x, char sep );
 void        showbitsUL( const u_int64_t x, char sep );
